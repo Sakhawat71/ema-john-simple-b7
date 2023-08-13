@@ -1,0 +1,17 @@
+.shop{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    position: relative;
+}
+.product-conteiner{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 100px 35px 0 50px;
+}
+.cart{
+    padding-top: 35px;
+    position: sticky;
+    border: 1px solid gray;
+    font-size: larger;
+    padding-left: 20px;
+}
