@@ -1,8 +1,8 @@
 /* eslint-disable */
 import React from 'react';
 import './Product.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 const Product = (props) => {
 
@@ -21,7 +21,7 @@ const Product = (props) => {
                 <small>Seller: {seller}</small>
             </div>
             <button onClick={ ()=> hendelAddtoCard(id)} className='btn-cart text-style'>
-                Add to Cart <FontAwesomeIcon icon={faCoffee}></FontAwesomeIcon>
+                Add to Cart <FontAwesomeIcon icon={faShoppingCart} />
                 </button>
         </div>
     );
