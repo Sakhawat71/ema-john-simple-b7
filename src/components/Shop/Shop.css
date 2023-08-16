@@ -8,10 +8,6 @@
     grid-template-columns: repeat(3, 1fr);
     margin: 100px 35px 0 50px;
 }
-.cart{
-    padding-top: 35px;
-    position: sticky;
-    border: 1px solid gray;
-    font-size: larger;
-    padding-left: 20px;
+.card-component{
+    background-color: rgba(255, 153, 0, 0.30);
 }

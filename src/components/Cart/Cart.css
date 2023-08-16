@@ -1,0 +1,11 @@
+/* .cart{
+    background-color: #FF99004D;
+} */
+.cart{
+    
+    padding-top: 35px;
+    position: sticky;
+    top: 0;
+    font-size: large;
+    padding-left: 20px;
+}
