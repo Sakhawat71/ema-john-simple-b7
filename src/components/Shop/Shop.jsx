@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import './Shop.css';
 import Product from '../Product/Product';
 import Cart from '../Cart/Cart';
+import { addToDb, getShoppingCart } from '../../utilities/fakedb';
 
 const Shop = () => {
     const [products,setProducts] = useState([]);
@@ -14,9 +15,30 @@ const Shop = () => {
         .then(data =>setProducts(data));
     },[])
 
+    useEffect(()=>{
+        const stordCart = getShoppingCart();
+        const savedCart = [];
+        for(const id in stordCart){
+
+            const addedPorduct = products.find(product => product.id === id);
+            
+            if(addedPorduct){
+
+                const quantity = stordCart[id];
+                addedPorduct.quantity = quantity;
+                savedCart.push(addedPorduct)
+            }
+            console.log(addedPorduct);
+        }
+        setCart(savedCart);
+
+    },[products])
+
+
     const hendelAddtoCard = (product)=>{
         const newCart = [...cart,product];
         setCart(newCart);
+        addToDb(product.id)
     }
 
 
@@ -41,3 +63,24 @@ const Shop = () => {
 };
 
 export default Shop;
+
+
+
+    /*
+        useEffect(()=>{
+        const stordCart = getShoppingCart();
+
+        for(const id in stordCart){
+
+            const addedPorduct = products.find(product => product.id === id);
+
+            const quantity = stordCart[id];
+
+            addedPorduct.quantity = quantity;
+
+        }
+    },[products])
+    
+    
+    
+    */
