@@ -12,12 +12,19 @@ const Cart = ({cart}) => {
     let total = 0;
     let shipping = 0;
     let grandTotal = 0;
+    // let quantity = 0;
     for(let product of cart){
+
+
+
         total = total + product.price;
         shipping = shipping + product.shipping;
+        // quantity = quantity + product.quantity;
     }
     let tax = total * 7 /100;
     grandTotal = grandTotal + total + tax;
+
+
     return (
         <div className='cart'>
             <h2 style={{marginLeft:'15px'}}>Order Summary</h2>
